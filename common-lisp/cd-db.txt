@@ -1,0 +1,2 @@
+
+((:TITLE "Organ Sonata" :ARTIST "巴赫" :RATING 8 :RIPPED T) (:TITLE "LuckyYou" :ARTIST "Eminem" :RATING 10 :RIPPED T) (:TITLE "Stan" :ARTIST "Eminem" :RATING 8 :RIPPED T) (:TITLE "Lose Yourself" :ARTIST "Eminem" :RATING 10 :RIPPED T)) 
