@@ -55,4 +55,8 @@ count ;;输出
 (point-min)
 ;; 获取当前光标中位点的最大可能值。默认是最后一个字符的point,除非设置了增宽。
 (point-max)
+(setq number 1.00000000000)
+
+(while t
+  (+ number number))
 
