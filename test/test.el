@@ -60,3 +60,31 @@ count ;;输出
 (while t
   (+ number number))
 
+(defun multiply-by-seven (number)
+  "使number(参量)乘以7
+第二行
+第三行
+第四行"
+  (* number 7))
+
+(multiply-by-seven 7)
+(apropos)
+
+(defun multiply-by-seven (number)
+  "使number(参量)加7次"
+  (+ number number number number number number number))
+
+(multiply-by-seven 7)
+
+(defun multiply-by-seven-interactive (number)
+  "打印 number(参量) 乘以 7
+这是个交互式函数"
+  (interactive "p")
+  (message "7 * %d = %d" number (* number 7)))
+
+(interactive "B请输入Buffer名称:")
+(defun get-buffer_name-point_start-point_end (buffer start end)
+  "获取buffer所对应的文件以及位点的开始结束值"
+  (interactive "B请输入Buffer名称: \nr")
+  (message "Buffer-file:%s\npoint-start:%d\npoint-end:%d"(buffer-file-name (get-buffer buffer)) start end))
+
