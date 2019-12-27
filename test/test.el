@@ -88,3 +88,8 @@ count ;;输出
   (interactive "B请输入Buffer名称: \nr")
   (message "Buffer-file:%s\npoint-start:%d\npoint-end:%d"(buffer-file-name (get-buffer buffer)) start end))
 
+(let (apple (pear 10) (banana '4斤) watermelon)
+  (message "苹果数量:%S\t梨子数量:%d\t香蕉数量:%s\t西瓜数量:%S" apple pear banana watermelon))
+
+(if (> 5 4)
+    (message "5 比 4 大!"))
