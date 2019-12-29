@@ -93,3 +93,30 @@ count ;;输出
 
 (if (> 5 4)
     (message "5 比 4 大!"))
+
+(defun type-of-animal (animal-name)
+  "根据animal-name打印信息到回显区
+如果animal-name是符号'fierce则返回'tiger"
+  (if (equal animal-name 'fierce)
+      (message "It's a tiger")))
+(type-of-animal 'fierce)
+
+(if (> 5 4)
+    (message "5 大于 4!")
+  (message "4 小于 5"))
+
+(defun type-of-animal (animal-name) ;second version
+  "根据animal-name打印信息到回显区
+如果animal-name是符号'fierce则输出'It's tiger!否则输出Tt not fierce"
+  (if (equal animal-name 'fierce)
+      (message "It's tiger")
+    (message "It not fierce")))
+(type-of-animal 'fierce)
+(type-of-animal 'notfierce)
+
+(if nil
+    'true
+  'false)
+(if t
+    'true
+  'false)
