@@ -180,3 +180,11 @@ specifying the portion of the current buffer to be copied."
       (set-buffer (get-buffer-create buffer))
       (insert-buffer-substring oldbuf start end))))
 
+
+(defun is-exist-buffer (buffer-or-name)
+  "判断buffer-or-name是否为一个已存在的buffer"
+  (if (bufferp (get-buffer buffer-or-name))
+      (message "%s存在!" buffer-or-name)
+    (message "此缓冲区不存在!")))
+(is-exist-buffer "test.el")
+
