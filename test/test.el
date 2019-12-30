@@ -120,3 +120,24 @@ count ;;输出
 (if t
     'true
   'false)
+
+(defun double(number)
+  "使number翻倍"
+  (setq number (* number 2)))
+(double 10)
+
+(defun double(number)
+  "使number翻倍"
+  (interactive "n请输入要翻倍的数字: ")
+  (setq number (* number 2))
+  (message "翻倍后:%d" number))
+
+(defun is-bigger-to-fill-column (number)
+  "判断number是否比fill-column大"
+  (if (> number fill-column)
+      (message "%d比fill-column要大" number)
+    (message "%d比fill-column要小" number)))
+
+(is-bigger-to-fill-column 79)
+(is-bigger-to-fill-column 81)
+
