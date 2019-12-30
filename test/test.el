@@ -141,3 +141,42 @@ count ;;输出
 (is-bigger-to-fill-column 79)
 (is-bigger-to-fill-column 81)
 
+(beginning-of-buffer)
+(defun simple-beginning-of-buffer ()
+  "移动光标至buffer开始处"
+  (interactive)
+  (push-mark)
+  (goto-char (point-min)))
+
+(defun simple-end-of-buffer()
+  "移动光标至buffer结束处"
+  (interactive)
+  (push-mark)
+  (goto-char (point-max)))
+
+(defun simple-mark-whole-buffer ()
+  "记录当前point到point-max之间的域，再将光标跳转至point-min"
+  (interactive)
+  (push-mark)
+  (push-mark (point-max))
+  (goto-char (point-min)))
+
+(defun mark-whole-buffer ()
+  "Put point at beginning and mark at end of buffer."
+  (interactive)
+  (push-mark (point))
+  (push-mark (point-max))
+  (goto-char (point-min)))
+
+(defun append-to-buffer (buffer start end)
+  "Append to specified buffer the text of the region.
+It is inserted into that buffer before its point.
+When alling from a program, give three arguments:
+a buffer or the name of one, and two character numbers
+specifying the portion of the current buffer to be copied."
+  (interactive "BAppend to buffer: \nr")
+  (let ((oldbuf (current-buffer)))
+    (save-excursion
+      (set-buffer (get-buffer-create buffer))
+      (insert-buffer-substring oldbuf start end))))
+
