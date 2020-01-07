@@ -182,9 +182,32 @@ specifying the portion of the current buffer to be copied."
 
 
 (defun is-exist-buffer (buffer-or-name)
-  "判断buffer-or-name是否为一个已存在的buffer"
+  "判断BUFFER-OR-NAME是否为一个已存在的buffer"
   (if (bufferp (get-buffer buffer-or-name))
       (message "%s存在!" buffer-or-name)
     (message "此缓冲区不存在!")))
+
 (is-exist-buffer "test.el")
 
+(defun smile ()
+  "微笑"
+  (interactive)
+  (message "呵呵呵哈哈哈呵呵微笑"))
+
+(defun cry-laugh()
+  "哭笑不得"
+  (interactive)
+  (message "呜呜呜哈哈哈哭笑不得"))
+
+(defun laugh()
+  "大笑"
+  (interactive
+   (message "哈哈哈哈大笑")))
+
+(map!
+ :leader
+ :prefix ("e" . "Evan专属")
+ (:prefix ("l" . "笑的多种方式")
+   :desc "大笑" "l" #'laugh
+   :desc "哭笑不得" "c" #'cry-laugh
+   :desc "微笑" "s" #'smile))
